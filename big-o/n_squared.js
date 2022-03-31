@@ -9,7 +9,7 @@ const logAllPairsOfArray = (array) => {
   }
 };
 
-logAllPairsOfArray(boxes);
+// logAllPairsOfArray(boxes);
 
 
 // BIG O
@@ -18,3 +18,27 @@ logAllPairsOfArray(boxes);
 //                the number of operations increases Quadratically.
 
 // makes it Horrible Big O
+
+
+const printAllNumbersThenAllPairSums = (numbers) => {
+  
+  console.log('These are the numbers: ');
+  numbers.forEach(function(number) {                // O(n)
+    console.log(number);
+  });
+
+  console.log('and these are their sums: ');
+  numbers.forEach(function(firstNumber) {           // O(n^2)
+    numbers.forEach(function(secondNumber) {
+      console.log(firstNumber + secondNumber);
+    });
+  });
+}
+
+printAllNumbersThenAllPairSums([1, 2, 3, 4, 5]);
+
+// BIG O
+// O(n + n^2)
+// According to RULE 4: Drop the non-dominents.
+// Here the first (n) is non-dominent, so
+// O(n^2)
