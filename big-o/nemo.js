@@ -14,7 +14,28 @@ function findNemo(array) {
     }
   }
   // let t1 = performance.now();
-  console.log('Performance = ' + (t1 - t0) + ' milliseconds');
+  // console.log('Performance = ' + (t1 - t0) + ' milliseconds');
 };
 
-findNemo(large); // O(n) --> Linear Time
+findNemo(fishColony); // O(n) --> Linear Time
+
+// Different ways to loop in JS
+
+const findNemo2 = (array) => {
+  array.forEach(fish => {
+    if(fish === 'nemo') {
+      console.log('Found Nemo');
+    }
+  })
+}
+
+const findNemo3 = (array) => {
+  for (let fish of array) {
+    if(fish === 'nemo') {
+      console.log('Found Nemo');
+    }
+  }
+}
+
+findNemo2(fishColony);
+findNemo3(fishColony);
