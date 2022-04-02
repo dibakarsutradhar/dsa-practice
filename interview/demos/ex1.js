@@ -29,6 +29,7 @@
 // }
 
 // easy naive/brute force solution is - nested loops or Big O(n^2)  - not the best solution
+// O(1) - Space Complexity
 
 // ----------------------------------------------------------------------------------------
 
@@ -64,6 +65,15 @@ const containsCommonItems2 = (arr1, arr2) => {
   return console.log(false);
 }
 
-containsCommonItems2(array1, array2);
+// containsCommonItems2(array1, array2);
 
-// BIG o(n)
+// BIG o(n + n) Time Complexity
+// Big O(n)
+// O(n) - Space Complexity
+
+// JS specific approach
+const containsCommonItems3 = (arr1, arr2) => {
+  return arr1.some(item => arr2.includes(item))
+};
+
+containsCommonItems3(array1, array2);
