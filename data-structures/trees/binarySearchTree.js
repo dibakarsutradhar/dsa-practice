@@ -22,24 +22,39 @@ class BinarySearchTree {
           // left
           if (!currentNode.left) {
             currentNode.left = newNode;
-            return console.log(this);
+            // return console.log(this);
+            return this;
           }
           currentNode = currentNode.left;
         } else {
           // right
           if (!currentNode.right) {
             currentNode.right = newNode;
-            return console.log(this);
+            // return console.log(this);
+            return this;
           }
           currentNode = currentNode.right;
         }
       }
     }
-    console.log(this);
+    // console.log(this);
   }
 
   lookup(value) {
-
+    if (!this.root) {
+      return console.log(false);
+    }
+    let currentNode = this.root;
+    while (currentNode) {
+      if (value < currentNode.value) {
+        currentNode = currentNode.left;
+      } else if (value > currentNode.value) {
+        currentNode = currentNode.right;
+      } else if (currentNode.value === value) {
+        return console.log(currentNode);
+      }
+    }
+    return console.log(false);
   }
 
   // remove
@@ -56,3 +71,6 @@ tree.insert(20);
 tree.insert(170);
 tree.insert(15);
 tree.insert(1);
+
+tree.lookup(9);
+tree.lookup(171);
