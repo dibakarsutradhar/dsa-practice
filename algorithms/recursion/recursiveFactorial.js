@@ -1,19 +1,14 @@
 const assert = require('assert');
 
 var factorial = function (n) {
-	var result = 1;
-
-	for (var i = 2; i <= n; i++) {
-		result = result * i;
+	// Base Case
+	if (n === 0) {
+		return 1;
 	}
 
-	return result;
+	// recursive case
+	return n * factorial(n - 1);
 };
-
-var fact1 = function (n) {
-	var result = n * n;
-	fact1(n - 1);
-}
 
 module.exports = factorial;
 
