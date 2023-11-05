@@ -1,6 +1,7 @@
 // Takes in an array that has two sorted subarrays,
 
 const assert = require('assert');
+const merge = require('./merge');
 
 // Takes in an array and recursively merge sorts it
 var mergeSort = function (array, p, r) {
